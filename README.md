@@ -2,7 +2,7 @@
 
 Built Nov 19, 2026, 12:54 PM CST. **2026 figures are unofficial** (Virginia State Board of Elections has not certified the Nov 3, 2026 election; DOE results files published Nov 19, 2026 11:27 AM CST).
 
-Wiki: [Home](https://github.com/mbenson8989/Virginia-Election-Analysis/wiki/Home) · [Bottom-Up Reverse Math](https://github.com/mbenson8989/Virginia-Election-Analysis/wiki/Reverse-Math) · [Locked Virginia Formula](https://github.com/mbenson8989/Virginia-Election-Analysis/wiki/Locked-Virginia-Formula) · [Floor and Ceiling](https://github.com/mbenson8989/Virginia-Election-Analysis/wiki/Floor-and-Ceiling) · [Graphs](https://github.com/mbenson8989/Virginia-Election-Analysis/wiki/Graphs). Method origin: [Cedar County Audit](https://github.com/mbenson8989/Nebraska-Election-Analysis-/wiki/Cedar-Audit).
+Wiki: [Home](https://github.com/mbenson8989/Virginia-Election-Analysis/wiki/Home) · [Bottom-Up Reverse Math](https://github.com/mbenson8989/Virginia-Election-Analysis/wiki/Reverse-Math) · [Locked Virginia Formula](https://github.com/mbenson8989/Virginia-Election-Analysis/wiki/Locked-Virginia-Formula) · [Floor and Ceiling](https://github.com/mbenson8989/Virginia-Election-Analysis/wiki/Floor-and-Ceiling) · [Graphs](https://github.com/mbenson8989/Virginia-Election-Analysis/wiki/Graphs) · [Virginia County PDF Information](https://github.com/mbenson8989/Virginia-Election-Analysis/wiki/Virginia-County-PDF-Information). Method origin: [Cedar County Audit](https://github.com/mbenson8989/Nebraska-Election-Analysis-/wiki/Cedar-Audit).
 
 ## What this is
 
@@ -52,6 +52,7 @@ Run everything: `scripts/run_all.sh` (prints ALL CLEAN only if both passes match
 - `data/regions.csv` – region assignment used for regional constants
 - `out/analysis.json` – fits, regional constants, narrowed-out localities, floor/ceiling, over-ballot flags
 - `graphs/*.png` – charts used on the wiki
+- `pdf/Virginia_133_Locality_Democratic_Baseline_and_Vote_Change.pdf` – 133-locality PDF table (substitute Democratic baseline, Democratic US House votes and total ballots, 2022 vs 2026, 2026 unofficial); built by `scripts/build_pdf.py`, every cell re-checked from the raw DOE files by `scripts/verify_pdf.py` (result in `out/verify_pdf.json`)
 - `wiki/*.md` – wiki page sources
 
 These files measure a pattern; they make no claim about intent, fraud or cause.

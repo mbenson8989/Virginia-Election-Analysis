@@ -15,6 +15,7 @@ Start with the Cedar County audit in Nebraska. That is where the method began. T
 3. [Locked Virginia Formula](Locked-Virginia-Formula): the **statewide fitted equation** (constant, multiplier, R², standard errors), regional constants, and the blank fill-in template
 4. [Floor and Ceiling Localities](Floor-and-Ceiling): the localities at the top and bottom, localities narrowed out of the fit, and the Texas-style over-ballot check
 5. [Graphs](Graphs): slope chart, ΔG by population, fitted-equation scatter, paired bars, residual bars, regional constants, over-ballot check
+6. [Virginia County PDF Information](Virginia-County-PDF-Information): downloadable 133-locality PDF table (baseline, Democratic votes and ballots, 2022 vs 2026\*), every cell checked against the raw DOE files
 
 ## Why US House 2022 vs 2026
 
@@ -60,4 +61,4 @@ Two independent passes (separate scripts that re-parse every raw DOE and Census 
 - **2026 is unofficial.** Every 2026 figure is marked \* and will be re-run after the State Board of Elections certifies the election.
 
 ---
-**Related:** [Bottom-Up Reverse Math](Reverse-Math) · [Locked Virginia Formula](Locked-Virginia-Formula) · [Floor and Ceiling Localities](Floor-and-Ceiling) · [Graphs](Graphs) · [Cedar County Audit (Nebraska)](https://github.com/mbenson8989/Nebraska-Election-Analysis-/wiki/Cedar-Audit)
+**Related:** [Bottom-Up Reverse Math](Reverse-Math) · [Locked Virginia Formula](Locked-Virginia-Formula) · [Floor and Ceiling Localities](Floor-and-Ceiling) · [Graphs](Graphs) · [Virginia County PDF Information](Virginia-County-PDF-Information) · [Cedar County Audit (Nebraska)](https://github.com/mbenson8989/Nebraska-Election-Analysis-/wiki/Cedar-Audit)

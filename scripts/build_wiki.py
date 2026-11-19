@@ -31,7 +31,7 @@ BANNER = ('> **\\*2026 figures are unofficial.** The Virginia State Board of Ele
  'General Assembly or statewide race in 2022). Votes are votes for the Democratic candidate. These pages measure a pattern; they make no claim about intent, fraud or cause.')
 REL = lambda *pages: '---\n**Related:** ' + ' · '.join(pages)
 P = {'home': '[Home](Home)', 'rev': '[Bottom-Up Reverse Math](Reverse-Math)', 'lock': '[Locked Virginia Formula](Locked-Virginia-Formula)',
-     'fc': '[Floor and Ceiling Localities](Floor-and-Ceiling)', 'gr': '[Graphs](Graphs)', 'cedar': f'[Cedar County Audit (Nebraska)]({CEDAR})'}
+     'fc': '[Floor and Ceiling Localities](Floor-and-Ceiling)', 'gr': '[Graphs](Graphs)', 'pdf': '[Virginia County PDF Information](Virginia-County-PDF-Information)', 'cedar': f'[Cedar County Audit (Nebraska)]({CEDAR})'}
 def img(file, alt, cap): return f'![{alt}]({IMG}{file})\n\n_{cap}_\n'
 
 # ---------------- HOME ----------------
@@ -56,6 +56,7 @@ Start with the Cedar County audit in Nebraska. That is where the method began. T
 3. [Locked Virginia Formula](Locked-Virginia-Formula): the **statewide fitted equation** (constant, multiplier, R², standard errors), regional constants, and the blank fill-in template
 4. [Floor and Ceiling Localities](Floor-and-Ceiling): the localities at the top and bottom, localities narrowed out of the fit, and the Texas-style over-ballot check
 5. [Graphs](Graphs): slope chart, ΔG by population, fitted-equation scatter, paired bars, residual bars, regional constants, over-ballot check
+6. [Virginia County PDF Information](Virginia-County-PDF-Information): downloadable 133-locality PDF table (baseline, Democratic votes and ballots, 2022 vs 2026\\*), every cell checked against the raw DOE files
 
 ## Why US House 2022 vs 2026
 
@@ -100,7 +101,7 @@ Two independent passes (separate scripts that re-parse every raw DOE and Census 
 - **A residual is not evidence of altered votes.** Candidate choice, crossover voting, turnout differences and the strong Democratic year in 2025 all move these numbers. The arithmetic cannot separate them.
 - **2026 is unofficial.** Every 2026 figure is marked \\* and will be re-run after the State Board of Elections certifies the election.
 
-{REL(P['rev'], P['lock'], P['fc'], P['gr'], P['cedar'])}
+{REL(P['rev'], P['lock'], P['fc'], P['gr'], P['pdf'], P['cedar'])}
 """
 
 # ---------------- REVERSE MATH ----------------
@@ -445,9 +446,73 @@ side = """**Virginia Election Analysis**
 3. [[Floor and Ceiling Localities|Floor-and-Ceiling]]
 4. [[Bottom-Up Reverse Math|Reverse-Math]]
 5. [[Graphs]]
+6. [[Virginia County PDF Information|Virginia-County-PDF-Information]]
 
 *2026 unofficial. Baseline is a proxy: Virginia has no party registration.*
 """
-for name, txt in (('Home', home), ('Reverse-Math', rev), ('Locked-Virginia-Formula', lock), ('Floor-and-Ceiling', fc), ('Graphs', gr), ('_Sidebar', side)):
+# ---- Virginia County PDF Information ----
+import csv as _csv, subprocess as _sp
+PDFNAME = 'Virginia_133_Locality_Democratic_Baseline_and_Vote_Change.pdf'
+PDFRAW = f'https://raw.githubusercontent.com/mbenson8989/Virginia-Election-Analysis/main/pdf/{PDFNAME}'
+_pt = [r for r in _csv.reader(open('data/virginia_pdf_table.csv'))]
+_s1 = [r for r in _pt if r[0] == '1' and r[1] == 'Statewide total'][0][2:]
+_s2 = [r for r in _pt if r[0] == '2' and r[1] == 'Statewide total'][0][2:]
+_t1 = [r for r in _pt if r[0] == '1' and r[1] != 'Statewide total']
+_np = [l.split()[-1] for l in _sp.run(['pdfinfo', f'pdf/{PDFNAME}'], capture_output=True, text=True).stdout.splitlines() if l.startswith('Pages:')][0]
+_vp = json.load(open('out/verify_pdf.json'))
+pdfp = f"""# Virginia County PDF Information
+
+**[Download the PDF: Virginia 133 Localities, Democratic Baseline, Democratic US House Votes and Total Ballots, 2022 vs 2026\\*]({PDFRAW})** ({_np} pages, landscape)
+
+The PDF follows the layout of the [Nebraska 93-county PDF](https://github.com/mbenson8989/Nebraska-Election-Analysis-/blob/main/Nebraska_93_County_Democratic_Registration_and_Vote_Change.pdf): one row for each of Virginia's 133 counties and independent cities, plus a statewide total row. Rows are sorted by the 2026 Democratic baseline share, highest first ({_t1[0][1]} first, {_t1[-1][1]} last). Rows where total registered voters fell are shaded blue, and the one locality where Democratic governor votes fell from 2021 to 2025 is shaded orange.
+
+> **Substitute baseline, not party registration.** Virginia does not register voters by party, so there is no Democratic registration to report. Where the Nebraska PDF shows Democratic registration, this PDF shows the **Dem Baseline**: the Democratic share of the governor vote in the odd-year election before each midterm (2021 for 2022, 2025 for 2026). The **Est. Dem Baseline** count is that share × total registered voters, rounded. It is an estimate, not a count of registered Democrats.
+
+\\*2026 figures are unofficial and not certified by the State Board of Elections (DOE results site as of Nov 19, 2026, 11:27 AM CST). The PDF should be rebuilt after certification.
+
+## Statewide totals
+
+| Measure | 2022 | 2026\\* | Change # | Change % |
+|---|---:|---:|---:|---:|
+| Est. Dem Baseline (share × registered voters) | {_s1[1]} | {_s1[2]} | {_s1[3]} | {_s1[4]} |
+| Democratic US House votes | {_s1[5]} | {_s1[6]} | {_s1[7]} | {_s1[8]} |
+| Total ballots (total US House votes) | {_s1[9]} | {_s1[10]} | {_s1[11]} | {_s1[12]} |
+| Dem Baseline share | {_s2[3]} | {_s2[5]} | | |
+| Democratic share of US House votes | {_s2[0]} | {_s2[1]} | {_s2[2]} pts | |
+| Total registered voters | {_s2[4]} | {_s2[6]} | | |
+| DOE-reported ballots (reference only) | {_s2[7]} | {_s2[8]} | | |
+
+## Columns
+
+**Table 1 (pages 1 to 4)**
+
+| Column | What it shows |
+|---|---|
+| Dem Baseline Share 2026 % | Democratic governor votes ÷ total governor votes, Nov 2025. The sort key. |
+| Est. Dem Baseline 2022 / 2026\\* | Baseline share (2021 or 2025 governor) × total registered voters at the 2022 or 2026 general, rounded. Substitute for Democratic registration. |
+| Baseline Change # / % | 2026 minus 2022, and that change as a percent of 2022. |
+| Dem House Votes 2022 / 2026\\* | Votes for the Democratic US House candidates, summed across all districts in the locality. |
+| Vote Change # / % | 2026 minus 2022, and percent change on the 2022 base. |
+| Total Ballots 2022 / 2026\\* | Total US House votes cast (all candidates, including write-ins), the denominator used throughout this wiki. |
+| Ballot Change # / % | 2026 minus 2022, and percent change on the 2022 base. |
+
+**Table 2 (pages 5 to {_np})**
+
+| Column | What it shows |
+|---|---|
+| Dem Share of House Votes 2022 % / 2026\\* % | Democratic US House votes ÷ total US House votes. |
+| Change (pts) | 2026 share minus 2022 share, in percentage points. |
+| Dem Baseline Share 2022 % / 2026 % | Democratic share of the 2021 and 2025 governor votes. |
+| Total Registered 2022 / 2026\\* | Active plus inactive registered voters reported with each November general. |
+| DOE-Reported Ballots 2022 / 2026\\* | Ballots cast from the DOE turnout statistics, for reference only. The 2022 report leaves out many early, mailed and provisional ballots, so the analysis does not use it (see [Floor and Ceiling Localities](Floor-and-Ceiling#texas-style-over-ballot-check)). |
+
+## Verification
+
+Every cell was rebuilt from the raw Department of Elections files by a separate script, [`scripts/verify_pdf.py`]({REPO}/blob/main/scripts/verify_pdf.py). That script does not read the analysis outputs. It reads the 2022 locality JSON files, the 2022 registration and turnout pages, the 2026 and 2025 precinct results CSVs, the 2026 turnout CSV, and the 2021 governor precinct rows. It then compares each value with the PDF text at the precision shown. Result: **{_vp['checked']:,} cells checked, {_vp['matched']:,} matched, {len(_vp['mismatches'])} mismatches.** The script also confirms the 2022 locality sums equal the district totals, the 2021 precinct rows add up to each locality and to the state, and the 2026 registration matches the DOE registration file. The same table is in [`data/virginia_pdf_table.csv`]({REPO}/blob/main/data/virginia_pdf_table.csv).
+
+{REL(P['home'], P['gr'], P['lock'], P['fc'], P['cedar'])}
+"""
+
+for name, txt in (('Virginia-County-PDF-Information', pdfp), ('Home', home), ('Reverse-Math', rev), ('Locked-Virginia-Formula', lock), ('Floor-and-Ceiling', fc), ('Graphs', gr), ('_Sidebar', side)):
     open(f'wiki/{name}.md', 'w').write(txt.strip() + '\n')
 print('wiki written')
