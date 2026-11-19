@@ -1,0 +1,1409 @@
+{
+ "n": 133,
+ "fit_all": {
+  "n": 133,
+  "constant": 3.0916911528933815,
+  "constant_se": 0.5175336648367447,
+  "multiplier": 0.48265468892313923,
+  "multiplier_se": 0.06980715678811443,
+  "r2": 0.26735822195063763,
+  "p_multiplier": 1.8655174474855853e-10,
+  "p_constant": 2.0537228866840165e-08,
+  "resid_se": 1.9353022605899608
+ },
+ "narrowed_out": [
+  {
+   "locality": "Fredericksburg City",
+   "region": "Northern Virginia",
+   "dG": -6.56301117403769,
+   "B_drop": -11.96696028683072,
+   "cooks": 0.08586874387564332,
+   "stud": -2.0704661951676977,
+   "house_total26": 10961
+  },
+  {
+   "locality": "Greene County",
+   "region": "Central Piedmont",
+   "dG": -6.426982129712663,
+   "B_drop": -10.704635723155732,
+   "cooks": 0.06718896028421471,
+   "stud": -2.315296386429992,
+   "house_total26": 9975
+  },
+  {
+   "locality": "Colonial Heights City",
+   "region": "Richmond Metro",
+   "dG": 0.7254579212942573,
+   "B_drop": -11.772101670895612,
+   "cooks": 0.05852698503605165,
+   "stud": 1.7597385735333575,
+   "house_total26": 6465
+  },
+  {
+   "locality": "Radford City",
+   "region": "Southwest",
+   "dG": 1.1874498391721815,
+   "B_drop": -11.281430424131322,
+   "cooks": 0.05567737816813781,
+   "stud": 1.876635777209419,
+   "house_total26": 5191
+  },
+  {
+   "locality": "Harrisonburg City",
+   "region": "Shenandoah Valley",
+   "dG": 0.3133121165331829,
+   "B_drop": -12.034264027975816,
+   "cooks": 0.053657853232354266,
+   "stud": 1.6078467151815936,
+   "house_total26": 14764
+  },
+  {
+   "locality": "Hopewell City",
+   "region": "Richmond Metro",
+   "dG": 0.6906533977073437,
+   "B_drop": -11.54860678454036,
+   "cooks": 0.04940400531390694,
+   "stud": 1.6799215497849134,
+   "house_total26": 6671
+  },
+  {
+   "locality": "Richmond City",
+   "region": "Richmond Metro",
+   "dG": -5.51454276564985,
+   "B_drop": -9.451332408363456,
+   "cooks": 0.034348656563656356,
+   "stud": -2.1343678062400238,
+   "house_total26": 96323
+  },
+  {
+   "locality": "Madison County",
+   "region": "Central Piedmont",
+   "dG": -5.587475810509236,
+   "B_drop": -6.532922362238555,
+   "cooks": 0.03237888184226795,
+   "stud": -2.949657677949521,
+   "house_total26": 6639
+  },
+  {
+   "locality": "Virginia Beach City",
+   "region": "Hampton Roads",
+   "dG": -5.178227645896797,
+   "B_drop": -10.015570593197602,
+   "cooks": 0.031534508027985346,
+   "stud": -1.8081565772067796,
+   "house_total26": 188167
+  }
+ ],
+ "fit_narrowed": {
+  "n": 124,
+  "constant": 3.218299602540363,
+  "constant_se": 0.4870099401779053,
+  "multiplier": 0.49163630057250984,
+  "multiplier_se": 0.06845514384543691,
+  "r2": 0.29715134328258175,
+  "p_multiplier": 5.915949408247844e-11,
+  "p_constant": 1.0771507508815557e-09,
+  "resid_se": 1.7048458086186966
+ },
+ "fit_weighted": {
+  "constant": 2.901098209564963,
+  "constant_se": 0.6866828522805176,
+  "multiplier": 0.5157747307386357,
+  "multiplier_se": 0.07788378947199982,
+  "r2": 0.2508107795548491,
+  "n": 133
+ },
+ "fit_ballots_all": {
+  "n": 133,
+  "constant": 3.049104735262738,
+  "constant_se": 0.8203899918116784,
+  "multiplier": 0.5894680747955268,
+  "multiplier_se": 0.11065771499881696,
+  "r2": 0.17804639699537383,
+  "p_multiplier": 4.224194116527334e-07,
+  "p_constant": 0.00029797726047096706,
+  "resid_se": 3.067824788208434
+ },
+ "fit_ballots_no_over": {
+  "n": 72,
+  "constant": 2.4532898532148053,
+  "constant_se": 0.6735854305832247,
+  "multiplier": 0.3784909033220437,
+  "multiplier_se": 0.098515957455076,
+  "r2": 0.17414250973635625,
+  "p_multiplier": 0.0002654746984447575,
+  "p_constant": 0.0005145333855841327,
+  "resid_se": 1.869628252912093
+ },
+ "regional_common_slope": {
+  "multiplier": 0.26971557573597127,
+  "multiplier_se": 0.06318278297775391,
+  "r2_vs_mean": 0.5888102582850591,
+  "constants": {
+   "Central Piedmont": {
+    "constant": -1.3482406426426603,
+    "se": 0.6722868769413193,
+    "n": 10
+   },
+   "Eastern Shore and Northern Neck": {
+    "constant": 1.4606612181956689,
+    "se": 0.5951591823385672,
+    "n": 11
+   },
+   "Hampton Roads": {
+    "constant": -0.060698736593548824,
+    "se": 0.6321310332344137,
+    "n": 16
+   },
+   "Northern Virginia": {
+    "constant": 0.22405951974720378,
+    "se": 0.7372598077899094,
+    "n": 13
+   },
+   "Richmond Metro": {
+    "constant": 1.5493438564134647,
+    "se": 0.5852560393256506,
+    "n": 17
+   },
+   "Roanoke-Lynchburg": {
+    "constant": 2.752428388991822,
+    "se": 0.5883627196286915,
+    "n": 12
+   },
+   "Shenandoah Valley": {
+    "constant": 2.30798985820069,
+    "se": 0.6120322221227035,
+    "n": 16
+   },
+   "Southside": {
+    "constant": 3.2052418358275765,
+    "se": 0.5158305473990282,
+    "n": 16
+   },
+   "Southwest": {
+    "constant": 2.7485749693066035,
+    "se": 0.4762477300936401,
+    "n": 22
+   }
+  }
+ },
+ "regional_F_test": {
+  "F": 12.019572857116694,
+  "p": 1.4335310929242705e-12,
+  "df_diff": 8.0,
+  "adj_r2_regional": 0.5587232040132342,
+  "adj_r2_statewide": 0.2617655366220166
+ },
+ "regional_separate": {
+  "Central Piedmont": {
+   "n": 10,
+   "constant": 2.0072929150027976,
+   "constant_se": 2.7247079008894652,
+   "multiplier": 0.7136380209157591,
+   "multiplier_se": 0.3517403463694914,
+   "r2": 0.33973478565281034,
+   "p_multiplier": 0.0769912068871369,
+   "p_constant": 0.482347005507712,
+   "resid_se": 1.8844328521467273,
+   "median_dG": -3.977012116670462
+  },
+  "Eastern Shore and Northern Neck": {
+   "n": 11,
+   "constant": 3.9506901672350456,
+   "constant_se": 2.098362675560007,
+   "multiplier": 0.6750041657293486,
+   "multiplier_se": 0.329858985112977,
+   "r2": 0.3175362681458672,
+   "p_multiplier": 0.07103289155364978,
+   "p_constant": 0.09239998719269318,
+   "resid_se": 1.8044776874517034,
+   "median_dG": -0.3429834339770536
+  },
+  "Hampton Roads": {
+   "n": 16,
+   "constant": 0.787675851765498,
+   "constant_se": 1.9079378102799291,
+   "multiplier": 0.374906857428268,
+   "multiplier_se": 0.23155707523969776,
+   "r2": 0.1577115399700011,
+   "p_multiplier": 0.12773237887457692,
+   "p_constant": 0.6859758199336126,
+   "resid_se": 1.5624827277660307,
+   "median_dG": -1.9276699904449472
+  },
+  "Northern Virginia": {
+   "n": 13,
+   "constant": -0.7136026251093968,
+   "constant_se": 2.990676711123286,
+   "multiplier": 0.1724943660358523,
+   "multiplier_se": 0.3055770223878732,
+   "r2": 0.02815230531894819,
+   "p_multiplier": 0.5837495607741812,
+   "p_constant": 0.8157956233851529,
+   "resid_se": 1.8324623425966828,
+   "median_dG": -2.140535583837533
+  },
+  "Richmond Metro": {
+   "n": 17,
+   "constant": 1.778831413225296,
+   "constant_se": 1.1061731510927861,
+   "multiplier": 0.3012940304466612,
+   "multiplier_se": 0.13975808542847215,
+   "r2": 0.23654732081457874,
+   "p_multiplier": 0.047744561388135674,
+   "p_constant": 0.12865486716720623,
+   "resid_se": 1.8069776139091316,
+   "median_dG": -0.6136343187702984
+  },
+  "Roanoke-Lynchburg": {
+   "n": 12,
+   "constant": -0.37294062485111446,
+   "constant_se": 1.1590801814335074,
+   "multiplier": -0.22456961772338724,
+   "multiplier_se": 0.1767809437502664,
+   "r2": 0.13895025434576325,
+   "p_multiplier": 0.23272775520427041,
+   "p_constant": 0.7542626254231078,
+   "resid_se": 1.0621782085151998,
+   "median_dG": 1.3274896595612162
+  },
+  "Shenandoah Valley": {
+   "n": 16,
+   "constant": 1.789299063421564,
+   "constant_se": 0.7551200612951736,
+   "multiplier": 0.20206228461375206,
+   "multiplier_se": 0.0946064351821532,
+   "r2": 0.24575978153512557,
+   "p_multiplier": 0.050841014545239656,
+   "p_constant": 0.03271961723658129,
+   "resid_se": 0.8399183956060586,
+   "median_dG": 0.35765045581335997
+  },
+  "Southside": {
+   "n": 16,
+   "constant": 2.484085505831405,
+   "constant_se": 1.2342914732486945,
+   "multiplier": 0.14143129487259862,
+   "multiplier_se": 0.2126337470900729,
+   "r2": 0.03063281638476023,
+   "p_multiplier": 0.5167690171901368,
+   "p_constant": 0.06380867208694443,
+   "resid_se": 1.2306702913098755,
+   "median_dG": 1.7755416098852326
+  },
+  "Southwest": {
+   "n": 22,
+   "constant": 2.5372553416692982,
+   "constant_se": 0.7611933605743149,
+   "multiplier": 0.23195841037103646,
+   "multiplier_se": 0.12668665424890854,
+   "r2": 0.1435577384917056,
+   "p_multiplier": 0.08204725176992089,
+   "p_constant": 0.0033133290164000084,
+   "resid_se": 1.2987985322306248,
+   "median_dG": 1.2748864031039489
+  }
+ },
+ "statewide": {
+  "D22": 1572296,
+  "D26": 2156783,
+  "house_total22": 3047729,
+  "house_total26": 3654176,
+  "govD21": 1599470,
+  "govTot21": 3288327,
+  "govD25": 1976857,
+  "govTot25": 3433340,
+  "ballots22": 3021956,
+  "ballots26": 3686609,
+  "R22": 1462049,
+  "R26": 1436340,
+  "reg22": 6106090,
+  "reg26": 6514124,
+  "S22": 51.58910126195604,
+  "S26": 59.02241709211597,
+  "B22": 48.64084380902508,
+  "B26": 57.57824742087879,
+  "G22": 2.94825745293096,
+  "G26": 1.4441696712371836,
+  "dG": -1.5040877816937765,
+  "B_drop": -8.93740361185371,
+  "implied_pooled": 271626.4430699053
+ },
+ "dG_summary": {
+  "median": 0.1100538359989009,
+  "min": -6.56301117403769,
+  "max": 4.019073103589385,
+  "mean": -0.2932621908081273,
+  "sd": 2.252431778884169,
+  "n_negative": 65,
+  "n_positive": 68,
+  "within3_of_median": 112
+ },
+ "residual_summary": {
+  "median": 6.549940951627988,
+  "min": 0.9454465517293188,
+  "max": 12.49755959218987,
+  "n_positive": 133,
+  "within3_of_median": 110,
+  "sd": 2.296832973369571
+ },
+ "B_drop_summary": {
+  "median": -6.825242905286764,
+  "min": -12.034264027975816,
+  "max": -2.595901364971916,
+  "n_positive": 0
+ },
+ "implied_sum": 258000.70033162565,
+ "baseline_scaled_sum": 209410.02285731825,
+ "n_implied_negative": 0,
+ "ceiling": [
+  {
+   "locality": "Buckingham County",
+   "region": "Southside",
+   "pop2025": 17137,
+   "B22": 36.112465464001296,
+   "B26": 40.56151940545004,
+   "S22": 34.95417991397045,
+   "S26": 43.42230695900858,
+   "G22": -1.1582855500308469,
+   "G26": 2.860787553558538,
+   "dG": 4.019073103589385,
+   "B_drop": -4.449053941448746,
+   "residual": 8.46812704503813,
+   "implied_extra": 532.9839162147,
+   "D22": 1869,
+   "D26": 2733,
+   "govD21": 2222,
+   "govD25": 2456,
+   "house_total22": 5347,
+   "house_total26": 6294
+  },
+  {
+   "locality": "Smyth County",
+   "region": "Southwest",
+   "pop2025": 28882,
+   "B22": 17.051319505307237,
+   "B26": 22.915835660151576,
+   "S22": 17.689487998108074,
+   "S26": 27.300342969132775,
+   "G22": 0.6381684928008369,
+   "G26": 4.3845073089812026,
+   "dG": 3.7463388161803657,
+   "B_drop": -5.864516154844338,
+   "residual": 9.610854971024704,
+   "implied_extra": 980.787749793071,
+   "D22": 1496,
+   "D26": 2786,
+   "govD21": 1751,
+   "govD25": 2298,
+   "house_total22": 8457,
+   "house_total26": 10205
+  },
+  {
+   "locality": "Galax City",
+   "region": "Southwest",
+   "pop2025": 6670,
+   "B22": 25.54517133956386,
+   "B26": 31.721572794899046,
+   "S22": 24.59526774595268,
+   "S26": 34.4364012409514,
+   "G22": -0.9499035936111824,
+   "G26": 2.7148284460523517,
+   "dG": 3.6647320396635337,
+   "B_drop": -6.176401455335185,
+   "residual": 9.84113349499872,
+   "implied_extra": 190.3275217932752,
+   "D22": 395,
+   "D26": 666,
+   "govD21": 492,
+   "govD25": 597,
+   "house_total22": 1606,
+   "house_total26": 1934
+  },
+  {
+   "locality": "Sussex County",
+   "region": "Richmond Metro",
+   "pop2025": 10755,
+   "B22": 50.38509316770187,
+   "B26": 52.98099453267378,
+   "S22": 49.27071178529755,
+   "S26": 54.98154981549816,
+   "G22": -1.1143813824043178,
+   "G26": 2.000555282824372,
+   "dG": 3.11493666522869,
+   "B_drop": -2.595901364971916,
+   "residual": 5.710838030200605,
+   "implied_extra": 216.66919486581105,
+   "D22": 1689,
+   "D26": 2086,
+   "govD21": 2028,
+   "govD25": 2035,
+   "house_total22": 3428,
+   "house_total26": 3794
+  },
+  {
+   "locality": "Cumberland County",
+   "region": "Southside",
+   "pop2025": 10352,
+   "B22": 35.857988165680474,
+   "B26": 40.79185520361991,
+   "S22": 35.11552928533047,
+   "S26": 42.97891431135038,
+   "G22": -0.7424588803500072,
+   "G26": 2.187059107730469,
+   "dG": 2.9295179880804767,
+   "B_drop": -4.933867037939436,
+   "residual": 7.863385026019912,
+   "implied_extra": 350.54970445996787,
+   "D22": 1307,
+   "D26": 1916,
+   "govD21": 1515,
+   "govD25": 1803,
+   "house_total22": 3722,
+   "house_total26": 4458
+  }
+ ],
+ "lowest_dG": [
+  {
+   "locality": "Fredericksburg City",
+   "region": "Northern Virginia",
+   "pop2025": 30393,
+   "B22": 59.78970669618152,
+   "B26": 71.75666698301224,
+   "S22": 66.33220634747519,
+   "S26": 71.73615546026822,
+   "G22": 6.542499651293674,
+   "G26": -0.020511522744016,
+   "dG": -6.56301117403769,
+   "B_drop": -11.96696028683072,
+   "residual": 5.403949112793029,
+   "implied_extra": 592.3268622532432,
+   "D22": 6082,
+   "D26": 7863,
+   "govD21": 5402,
+   "govD25": 7561,
+   "house_total22": 9169,
+   "house_total26": 10961
+  },
+  {
+   "locality": "Greene County",
+   "region": "Central Piedmont",
+   "pop2025": 21958,
+   "B22": 31.7349016059715,
+   "B26": 42.43953732912723,
+   "S22": 39.20104314841157,
+   "S26": 43.47869674185464,
+   "G22": 7.46614154244007,
+   "G26": 1.0391594127274075,
+   "dG": -6.426982129712663,
+   "B_drop": -10.704635723155732,
+   "residual": 4.27765359344307,
+   "implied_extra": 426.69594594594537,
+   "D22": 3307,
+   "D26": 4337,
+   "govD21": 2806,
+   "govD25": 4036,
+   "house_total22": 8436,
+   "house_total26": 9975
+  },
+  {
+   "locality": "Madison County",
+   "region": "Central Piedmont",
+   "pop2025": 14237,
+   "B22": 29.325208085612363,
+   "B26": 35.85813044785092,
+   "S22": 35.85226394683975,
+   "S26": 36.79771049856907,
+   "G22": 6.527055861227385,
+   "G26": 0.9395800507181492,
+   "dG": -5.587475810509236,
+   "B_drop": -6.532922362238555,
+   "residual": 0.9454465517293188,
+   "implied_extra": 62.76819656930911,
+   "D22": 2320,
+   "D26": 2443,
+   "govD21": 1973,
+   "govD25": 2386,
+   "house_total22": 6471,
+   "house_total26": 6639
+  },
+  {
+   "locality": "Richmond City",
+   "region": "Richmond Metro",
+   "pop2025": 237257,
+   "B22": 77.27408849292505,
+   "B26": 86.7254209012885,
+   "S22": 83.01440581423853,
+   "S26": 86.95119545695214,
+   "G22": 5.740317321313484,
+   "G26": 0.2257745556636337,
+   "dG": -5.51454276564985,
+   "B_drop": -9.451332408363456,
+   "residual": 3.936789642713606,
+   "implied_extra": 3792.0338875510206,
+   "D22": 57568,
+   "D26": 83754,
+   "govD21": 61929,
+   "govD25": 79019,
+   "house_total22": 69347,
+   "house_total26": 96323
+  },
+  {
+   "locality": "Virginia Beach City",
+   "region": "Hampton Roads",
+   "pop2025": 453737,
+   "B22": 45.60195318039175,
+   "B26": 55.61752377358935,
+   "S22": 50.04794512127657,
+   "S26": 54.885288068577374,
+   "G22": 4.445991940884824,
+   "G26": -0.7322357050119734,
+   "dG": -5.178227645896797,
+   "B_drop": -10.015570593197602,
+   "residual": 4.8373429473008045,
+   "implied_extra": 9102.28310364751,
+   "D22": 81421,
+   "D26": 103276,
+   "govD21": 73965,
+   "govD25": 94339,
+   "house_total22": 162686,
+   "house_total26": 188167
+  }
+ ],
+ "floor": [
+  {
+   "locality": "Lee County",
+   "region": "Southwest",
+   "pop2025": 21642,
+   "B22": 12.125378058839702,
+   "B26": 15.761794276875484,
+   "S22": 14.865819209039548,
+   "S26": 19.15786202610317,
+   "G22": 2.740441150199846,
+   "G26": 3.3960677492276883,
+   "dG": 0.6556265990278423,
+   "B_drop": -3.63641621803578,
+   "residual": 4.292042817063623,
+   "implied_extra": 276.23587570621464,
+   "D22": 842,
+   "D26": 1233,
+   "govD21": 882,
+   "govD25": 1019,
+   "house_total22": 5664,
+   "house_total26": 6436
+  },
+  {
+   "locality": "Scott County",
+   "region": "Southwest",
+   "pop2025": 21200,
+   "B22": 12.716763005780344,
+   "B26": 16.795865633074936,
+   "S22": 14.18309643894238,
+   "S26": 20.08256758556399,
+   "G22": 1.4663334331620348,
+   "G26": 3.2867019524890537,
+   "dG": 1.820368519327019,
+   "B_drop": -4.07910262729459,
+   "residual": 5.899471146621609,
+   "implied_extra": 442.9912883998168,
+   "D22": 928,
+   "D26": 1508,
+   "govD21": 1034,
+   "govD25": 1235,
+   "house_total22": 6543,
+   "house_total26": 7509
+  },
+  {
+   "locality": "Tazewell County",
+   "region": "Southwest",
+   "pop2025": 38635,
+   "B22": 13.091301222142343,
+   "B26": 17.73430104133796,
+   "S22": 14.170566822672908,
+   "S26": 21.01992877169053,
+   "G22": 1.0792656005305634,
+   "G26": 3.285627730352573,
+   "dG": 2.206362129822009,
+   "B_drop": -4.642999819195618,
+   "residual": 6.849361949017627,
+   "implied_extra": 903.9102964118564,
+   "D22": 1635,
+   "D26": 2774,
+   "govD21": 1821,
+   "govD25": 2248,
+   "house_total22": 11538,
+   "house_total26": 13197
+  },
+  {
+   "locality": "Bland County",
+   "region": "Southwest",
+   "pop2025": 6151,
+   "B22": 13.730667672576386,
+   "B26": 18.23821339950372,
+   "S22": 13.303370786516854,
+   "S26": 19.703644373247897,
+   "G22": -0.4272968860595316,
+   "G26": 1.4654309737441764,
+   "dG": 1.892727859803708,
+   "B_drop": -4.507545726927335,
+   "residual": 6.400273586731043,
+   "implied_extra": 159.81483146067416,
+   "D22": 296,
+   "D26": 492,
+   "govD21": 364,
+   "govD25": 441,
+   "house_total22": 2225,
+   "house_total26": 2497
+  },
+  {
+   "locality": "Russell County",
+   "region": "Southwest",
+   "pop2025": 25332,
+   "B22": 14.967529120709203,
+   "B26": 18.676043759767804,
+   "S22": 17.07753225188402,
+   "S26": 23.481603514552443,
+   "G22": 2.110003131174814,
+   "G26": 4.805559754784639,
+   "dG": 2.695556623609825,
+   "B_drop": -3.708514639058599,
+   "residual": 6.404071262668424,
+   "implied_extra": 583.09068846596,
+   "D22": 1337,
+   "D26": 2138,
+   "govD21": 1452,
+   "govD25": 1673,
+   "house_total22": 7829,
+   "house_total26": 9105
+  }
+ ],
+ "highest_baseline": [
+  {
+   "locality": "Petersburg City",
+   "region": "Richmond Metro",
+   "pop2025": 33734,
+   "B22": 84.87254025044723,
+   "B26": 88.46385542168674,
+   "S22": 86.73684210526315,
+   "S26": 88.94211967149003,
+   "G22": 1.8643018548159205,
+   "G26": 0.4782642498032885,
+   "dG": -1.386037605012632,
+   "B_drop": -3.591315171239515,
+   "residual": 2.205277566226883,
+   "implied_extra": 225.55578947368485,
+   "D22": 6592,
+   "D26": 9097,
+   "govD21": 7591,
+   "govD25": 8811,
+   "house_total22": 7600,
+   "house_total26": 10228
+  },
+  {
+   "locality": "Charlottesville City",
+   "region": "Central Piedmont",
+   "pop2025": 44388,
+   "B22": 82.88464864241656,
+   "B26": 88.93065113816834,
+   "S22": 87.1704429963532,
+   "S26": 88.66869918699187,
+   "G22": 4.285794353936637,
+   "G26": -0.2619519511764707,
+   "dG": -4.547746305113108,
+   "B_drop": -6.046002495751779,
+   "residual": 1.4982561906386709,
+   "implied_extra": 324.3425001494579,
+   "D22": 14581,
+   "D26": 19195,
+   "govD21": 14378,
+   "govD25": 16799,
+   "house_total22": 16727,
+   "house_total26": 21648
+  },
+  {
+   "locality": "Richmond City",
+   "region": "Richmond Metro",
+   "pop2025": 237257,
+   "B22": 77.27408849292505,
+   "B26": 86.7254209012885,
+   "S22": 83.01440581423853,
+   "S26": 86.95119545695214,
+   "G22": 5.740317321313484,
+   "G26": 0.2257745556636337,
+   "dG": -5.51454276564985,
+   "B_drop": -9.451332408363456,
+   "residual": 3.936789642713606,
+   "implied_extra": 3792.0338875510206,
+   "D22": 57568,
+   "D26": 83754,
+   "govD21": 61929,
+   "govD25": 79019,
+   "house_total22": 69347,
+   "house_total26": 96323
+  },
+  {
+   "locality": "Falls Church City",
+   "region": "Northern Virginia",
+   "pop2025": 15159,
+   "B22": 76.68659265584971,
+   "B26": 84.30263157894737,
+   "S22": 79.7576510796955,
+   "S26": 83.24786324786325,
+   "G22": 3.0710584238457983,
+   "G26": -1.0547683310841194,
+   "dG": -4.125826754929918,
+   "B_drop": -7.616038923097662,
+   "residual": 3.4902121681677443,
+   "implied_extra": 285.84837657293883,
+   "D22": 5134,
+   "D26": 6818,
+   "govD21": 5388,
+   "govD25": 6407,
+   "house_total22": 6437,
+   "house_total26": 8190
+  },
+  {
+   "locality": "Arlington County",
+   "region": "Northern Virginia",
+   "pop2025": 243931,
+   "B22": 76.66936186745913,
+   "B26": 83.80701455605534,
+   "S22": 77.57729701322589,
+   "S26": 82.5039964310941,
+   "G22": 0.907935145766757,
+   "G26": -1.3030181249612411,
+   "dG": -2.210953270727998,
+   "B_drop": -7.137652688596205,
+   "residual": 4.926699417868207,
+   "implied_extra": 5300.931505649467,
+   "D22": 70856,
+   "D26": 88771,
+   "govD21": 73013,
+   "govD25": 83657,
+   "house_total22": 91336,
+   "house_total26": 107596
+  }
+ ],
+ "baseline_loss": [
+  {
+   "locality": "Greensville County",
+   "region": "Southside",
+   "pop2025": 11181,
+   "B22": 52.63881253435954,
+   "B26": 56.99730296673658,
+   "S22": 52.06273440163655,
+   "S26": 58.58006042296072,
+   "G22": -0.5760781327229907,
+   "G26": 1.5827574562241369,
+   "dG": 2.158835588947128,
+   "B_drop": -4.358490432377046,
+   "residual": 6.517326021324173,
+   "implied_extra": 215.7234913058303,
+   "D22": 1527,
+   "D26": 1939,
+   "govD21": 1915,
+   "govD25": 1902,
+   "house_total22": 2933,
+   "house_total26": 3310
+  }
+ ],
+ "over22": [
+  {
+   "locality": "Albemarle County",
+   "D22": 33437,
+   "R22": 16638,
+   "ballots22": 38050,
+   "over22": 12025,
+   "house_total22": 50206,
+   "house_over22": 12156
+  },
+  {
+   "locality": "Richmond City",
+   "D22": 57568,
+   "R22": 11625,
+   "ballots22": 68244,
+   "over22": 949,
+   "house_total22": 69347,
+   "house_over22": 1103
+  },
+  {
+   "locality": "Grayson County",
+   "D22": 985,
+   "R22": 4393,
+   "ballots22": 4511,
+   "over22": 867,
+   "house_total22": 5384,
+   "house_over22": 873
+  },
+  {
+   "locality": "Charlottesville City",
+   "D22": 14581,
+   "R22": 2100,
+   "ballots22": 15842,
+   "over22": 839,
+   "house_total22": 16727,
+   "house_over22": 885
+  },
+  {
+   "locality": "Virginia Beach City",
+   "D22": 81421,
+   "R22": 81016,
+   "ballots22": 161753,
+   "over22": 684,
+   "house_total22": 162686,
+   "house_over22": 933
+  },
+  {
+   "locality": "Hanover County",
+   "D22": 17054,
+   "R22": 34465,
+   "ballots22": 50849,
+   "over22": 670,
+   "house_total22": 51937,
+   "house_over22": 1088
+  },
+  {
+   "locality": "Loudoun County",
+   "D22": 94116,
+   "R22": 68505,
+   "ballots22": 162039,
+   "over22": 582,
+   "house_total22": 162979,
+   "house_over22": 940
+  },
+  {
+   "locality": "Montgomery County",
+   "D22": 14239,
+   "R22": 13563,
+   "ballots22": 27342,
+   "over22": 460,
+   "house_total22": 27871,
+   "house_over22": 529
+  },
+  {
+   "locality": "Stafford County",
+   "D22": 28685,
+   "R22": 28806,
+   "ballots22": 57153,
+   "over22": 338,
+   "house_total22": 57637,
+   "house_over22": 484
+  },
+  {
+   "locality": "Spotsylvania County",
+   "D22": 25424,
+   "R22": 29390,
+   "ballots22": 54515,
+   "over22": 299,
+   "house_total22": 54956,
+   "house_over22": 441
+  },
+  {
+   "locality": "Prince William County",
+   "D22": 90113,
+   "R22": 61151,
+   "ballots22": 150983,
+   "over22": 281,
+   "house_total22": 151592,
+   "house_over22": 609
+  },
+  {
+   "locality": "Williamsburg City",
+   "D22": 3352,
+   "R22": 1656,
+   "ballots22": 4744,
+   "over22": 264,
+   "house_total22": 5098,
+   "house_over22": 354
+  },
+  {
+   "locality": "Harrisonburg City",
+   "D22": 6526,
+   "R22": 3819,
+   "ballots22": 10086,
+   "over22": 259,
+   "house_total22": 10368,
+   "house_over22": 282
+  },
+  {
+   "locality": "Lynchburg City",
+   "D22": 10840,
+   "R22": 12508,
+   "ballots22": 23138,
+   "over22": 210,
+   "house_total22": 23420,
+   "house_over22": 282
+  },
+  {
+   "locality": "Fairfax County",
+   "D22": 271542,
+   "R22": 132601,
+   "ballots22": 403942,
+   "over22": 201,
+   "house_total22": 406709,
+   "house_over22": 2767
+  },
+  {
+   "locality": "Frederick County",
+   "D22": 11302,
+   "R22": 22317,
+   "ballots22": 33520,
+   "over22": 99,
+   "house_total22": 33693,
+   "house_over22": 173
+  },
+  {
+   "locality": "Hampton City",
+   "D22": 28593,
+   "R22": 11994,
+   "ballots22": 40491,
+   "over22": 96,
+   "house_total22": 40656,
+   "house_over22": 165
+  },
+  {
+   "locality": "Culpeper County",
+   "D22": 7979,
+   "R22": 12198,
+   "ballots22": 20091,
+   "over22": 86,
+   "house_total22": 20217,
+   "house_over22": 126
+  },
+  {
+   "locality": "Fauquier County",
+   "D22": 12408,
+   "R22": 20704,
+   "ballots22": 33027,
+   "over22": 85,
+   "house_total22": 33157,
+   "house_over22": 130
+  },
+  {
+   "locality": "Fluvanna County",
+   "D22": 5516,
+   "R22": 6299,
+   "ballots22": 11747,
+   "over22": 68,
+   "house_total22": 11832,
+   "house_over22": 85
+  },
+  {
+   "locality": "Orange County",
+   "D22": 6432,
+   "R22": 9695,
+   "ballots22": 16060,
+   "over22": 67,
+   "house_total22": 16155,
+   "house_over22": 95
+  },
+  {
+   "locality": "Caroline County",
+   "D22": 5244,
+   "R22": 6350,
+   "ballots22": 11533,
+   "over22": 61,
+   "house_total22": 11609,
+   "house_over22": 76
+  },
+  {
+   "locality": "Fredericksburg City",
+   "D22": 6082,
+   "R22": 3066,
+   "ballots22": 9089,
+   "over22": 59,
+   "house_total22": 9169,
+   "house_over22": 80
+  },
+  {
+   "locality": "Goochland County",
+   "D22": 5028,
+   "R22": 8706,
+   "ballots22": 13683,
+   "over22": 51,
+   "house_total22": 13758,
+   "house_over22": 75
+  },
+  {
+   "locality": "Louisa County",
+   "D22": 5762,
+   "R22": 10511,
+   "ballots22": 16224,
+   "over22": 49,
+   "house_total22": 16297,
+   "house_over22": 73
+  },
+  {
+   "locality": "Dinwiddie County",
+   "D22": 3639,
+   "R22": 5890,
+   "ballots22": 9488,
+   "over22": 41,
+   "house_total22": 9535,
+   "house_over22": 47
+  },
+  {
+   "locality": "Greene County",
+   "D22": 3307,
+   "R22": 5114,
+   "ballots22": 8382,
+   "over22": 39,
+   "house_total22": 8436,
+   "house_over22": 54
+  },
+  {
+   "locality": "Norfolk City",
+   "D22": 38638,
+   "R22": 15579,
+   "ballots22": 54178,
+   "over22": 39,
+   "house_total22": 54372,
+   "house_over22": 194
+  },
+  {
+   "locality": "Waynesboro City",
+   "D22": 3264,
+   "R22": 3926,
+   "ballots22": 7154,
+   "over22": 36,
+   "house_total22": 7204,
+   "house_over22": 50
+  },
+  {
+   "locality": "Powhatan County",
+   "D22": 3711,
+   "R22": 11200,
+   "ballots22": 14879,
+   "over22": 32,
+   "house_total22": 14931,
+   "house_over22": 52
+  },
+  {
+   "locality": "Manassas Park City",
+   "D22": 2041,
+   "R22": 1304,
+   "ballots22": 3314,
+   "over22": 31,
+   "house_total22": 3353,
+   "house_over22": 39
+  },
+  {
+   "locality": "King George County",
+   "D22": 3913,
+   "R22": 6590,
+   "ballots22": 10478,
+   "over22": 25,
+   "house_total22": 10530,
+   "house_over22": 52
+  },
+  {
+   "locality": "Warren County",
+   "D22": 4253,
+   "R22": 9965,
+   "ballots22": 14193,
+   "over22": 25,
+   "house_total22": 14248,
+   "house_over22": 55
+  },
+  {
+   "locality": "Northampton County",
+   "D22": 2855,
+   "R22": 2569,
+   "ballots22": 5400,
+   "over22": 24,
+   "house_total22": 5434,
+   "house_over22": 34
+  },
+  {
+   "locality": "Clarke County",
+   "D22": 2902,
+   "R22": 4270,
+   "ballots22": 7149,
+   "over22": 23,
+   "house_total22": 7179,
+   "house_over22": 30
+  },
+  {
+   "locality": "Madison County",
+   "D22": 2320,
+   "R22": 4143,
+   "ballots22": 6442,
+   "over22": 21,
+   "house_total22": 6471,
+   "house_over22": 29
+  },
+  {
+   "locality": "Amelia County",
+   "D22": 1393,
+   "R22": 4187,
+   "ballots22": 5562,
+   "over22": 18,
+   "house_total22": 5584,
+   "house_over22": 22
+  },
+  {
+   "locality": "Carroll County",
+   "D22": 1685,
+   "R22": 8496,
+   "ballots22": 10164,
+   "over22": 17,
+   "house_total22": 10210,
+   "house_over22": 46
+  },
+  {
+   "locality": "New Kent County",
+   "D22": 3417,
+   "R22": 7567,
+   "ballots22": 10968,
+   "over22": 16,
+   "house_total22": 11071,
+   "house_over22": 103
+  },
+  {
+   "locality": "Charles City County",
+   "D22": 1585,
+   "R22": 1263,
+   "ballots22": 2832,
+   "over22": 16,
+   "house_total22": 2848,
+   "house_over22": 16
+  },
+  {
+   "locality": "Roanoke County",
+   "D22": 13036,
+   "R22": 24286,
+   "ballots22": 37308,
+   "over22": 14,
+   "house_total22": 37404,
+   "house_over22": 96
+  },
+  {
+   "locality": "Botetourt County",
+   "D22": 3568,
+   "R22": 11118,
+   "ballots22": 14672,
+   "over22": 14,
+   "house_total22": 14707,
+   "house_over22": 35
+  },
+  {
+   "locality": "Bedford County",
+   "D22": 7389,
+   "R22": 26254,
+   "ballots22": 33630,
+   "over22": 13,
+   "house_total22": 33689,
+   "house_over22": 59
+  },
+  {
+   "locality": "Lexington City",
+   "D22": 1312,
+   "R22": 700,
+   "ballots22": 1999,
+   "over22": 13,
+   "house_total22": 2022,
+   "house_over22": 23
+  },
+  {
+   "locality": "Nottoway County",
+   "D22": 1713,
+   "R22": 3103,
+   "ballots22": 4804,
+   "over22": 12,
+   "house_total22": 4821,
+   "house_over22": 17
+  },
+  {
+   "locality": "Campbell County",
+   "D22": 4616,
+   "R22": 15393,
+   "ballots22": 19998,
+   "over22": 11,
+   "house_total22": 20060,
+   "house_over22": 62
+  },
+  {
+   "locality": "Appomattox County",
+   "D22": 1364,
+   "R22": 5224,
+   "ballots22": 6578,
+   "over22": 10,
+   "house_total22": 6597,
+   "house_over22": 19
+  },
+  {
+   "locality": "Buckingham County",
+   "D22": 1869,
+   "R22": 3472,
+   "ballots22": 5331,
+   "over22": 10,
+   "house_total22": 5347,
+   "house_over22": 16
+  },
+  {
+   "locality": "Nelson County",
+   "D22": 3405,
+   "R22": 3725,
+   "ballots22": 7122,
+   "over22": 8,
+   "house_total22": 7144,
+   "house_over22": 22
+  },
+  {
+   "locality": "Buena Vista City",
+   "D22": 466,
+   "R22": 1153,
+   "ballots22": 1612,
+   "over22": 7,
+   "house_total22": 1625,
+   "house_over22": 13
+  },
+  {
+   "locality": "Winchester City",
+   "D22": 4263,
+   "R22": 3621,
+   "ballots22": 7877,
+   "over22": 7,
+   "house_total22": 7896,
+   "house_over22": 19
+  },
+  {
+   "locality": "Charlotte County",
+   "D22": 1301,
+   "R22": 2953,
+   "ballots22": 4248,
+   "over22": 6,
+   "house_total22": 4257,
+   "house_over22": 9
+  },
+  {
+   "locality": "Petersburg City",
+   "D22": 6592,
+   "R22": 994,
+   "ballots22": 7581,
+   "over22": 5,
+   "house_total22": 7600,
+   "house_over22": 19
+  },
+  {
+   "locality": "Giles County",
+   "D22": 1337,
+   "R22": 4436,
+   "ballots22": 5768,
+   "over22": 5,
+   "house_total22": 5785,
+   "house_over22": 17
+  },
+  {
+   "locality": "Rockingham County",
+   "D22": 8392,
+   "R22": 23093,
+   "ballots22": 31482,
+   "over22": 3,
+   "house_total22": 31535,
+   "house_over22": 53
+  },
+  {
+   "locality": "Manassas City",
+   "D22": 6029,
+   "R22": 4609,
+   "ballots22": 10635,
+   "over22": 3,
+   "house_total22": 10653,
+   "house_over22": 18
+  },
+  {
+   "locality": "Prince Edward County",
+   "D22": 2918,
+   "R22": 3445,
+   "ballots22": 6361,
+   "over22": 2,
+   "house_total22": 6374,
+   "house_over22": 13
+  },
+  {
+   "locality": "Craig County",
+   "D22": 350,
+   "R22": 1715,
+   "ballots22": 2063,
+   "over22": 2,
+   "house_total22": 2070,
+   "house_over22": 7
+  },
+  {
+   "locality": "Galax City",
+   "D22": 395,
+   "R22": 1208,
+   "ballots22": 1601,
+   "over22": 2,
+   "house_total22": 1606,
+   "house_over22": 5
+  },
+  {
+   "locality": "Pittsylvania County",
+   "D22": 5994,
+   "R22": 17896,
+   "ballots22": 23889,
+   "over22": 1,
+   "house_total22": 23931,
+   "house_over22": 42
+  },
+  {
+   "locality": "Greensville County",
+   "D22": 1527,
+   "R22": 1397,
+   "ballots22": 2923,
+   "over22": 1,
+   "house_total22": 2933,
+   "house_over22": 10
+  }
+ ],
+ "house_over22_count": 94,
+ "over26_count": 0,
+ "sen_over26_count": 0,
+ "house_over26_count": 0,
+ "dS_negative": [],
+ "split_localities": [
+  {
+   "locality": "Fairfax County",
+   "districts22": "8;10;11"
+  },
+  {
+   "locality": "Prince William County",
+   "districts22": "7;10"
+  },
+  {
+   "locality": "Chesterfield County",
+   "districts22": "1;4"
+  },
+  {
+   "locality": "Henrico County",
+   "districts22": "1;4"
+  },
+  {
+   "locality": "Chesapeake City",
+   "districts22": "2;3"
+  },
+  {
+   "locality": "Albemarle County",
+   "districts22": "5;7"
+  },
+  {
+   "locality": "Hanover County",
+   "districts22": "1;5"
+  },
+  {
+   "locality": "Roanoke County",
+   "districts22": "6;9"
+  },
+  {
+   "locality": "Bedford County",
+   "districts22": "5;6;9"
+  },
+  {
+   "locality": "Southampton County",
+   "districts22": "2;4"
+  }
+ ],
+ "log_pop_r2": 0.15757563133266506
+}

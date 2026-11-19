@@ -1,0 +1,336 @@
+{
+ "house2022_enr_vs_historical": {
+  "localities": 133,
+  "figures": 399,
+  "differences": 47,
+  "D_diff_total": 933,
+  "R_diff_total": 243,
+  "T_diff_total": 66,
+  "details": [
+   [
+    "FAIRFAX COUNTY",
+    "house_total22",
+    406709,
+    406708
+   ],
+   [
+    "PRINCE WILLIAM COUNTY",
+    "house_total22",
+    151592,
+    151588
+   ],
+   [
+    "VIRGINIA BEACH CITY",
+    "house_total22",
+    162686,
+    162682
+   ],
+   [
+    "LOUDOUN COUNTY",
+    "house_total22",
+    162979,
+    162976
+   ],
+   [
+    "CHESTERFIELD COUNTY",
+    "house_total22",
+    140257,
+    140256
+   ],
+   [
+    "HENRICO COUNTY",
+    "house_total22",
+    125186,
+    125184
+   ],
+   [
+    "CHESAPEAKE CITY",
+    "house_total22",
+    88647,
+    88645
+   ],
+   [
+    "ARLINGTON COUNTY",
+    "house_total22",
+    91336,
+    91334
+   ],
+   [
+    "RICHMOND CITY",
+    "D22",
+    57568,
+    0
+   ],
+   [
+    "RICHMOND CITY",
+    "R22",
+    11625,
+    0
+   ],
+   [
+    "RICHMOND CITY",
+    "house_total22",
+    69347,
+    0
+   ],
+   [
+    "NORFOLK CITY",
+    "house_total22",
+    54372,
+    54371
+   ],
+   [
+    "STAFFORD COUNTY",
+    "house_total22",
+    57637,
+    57635
+   ],
+   [
+    "ALEXANDRIA CITY",
+    "D22",
+    41974,
+    41041
+   ],
+   [
+    "ALEXANDRIA CITY",
+    "R22",
+    11276,
+    11033
+   ],
+   [
+    "ALEXANDRIA CITY",
+    "house_total22",
+    54226,
+    54223
+   ],
+   [
+    "SPOTSYLVANIA COUNTY",
+    "house_total22",
+    54956,
+    54954
+   ],
+   [
+    "HAMPTON CITY",
+    "house_total22",
+    40656,
+    40654
+   ],
+   [
+    "ALBEMARLE COUNTY",
+    "house_total22",
+    50206,
+    50201
+   ],
+   [
+    "SUFFOLK CITY",
+    "house_total22",
+    36797,
+    36796
+   ],
+   [
+    "ROANOKE CITY",
+    "house_total22",
+    26321,
+    26320
+   ],
+   [
+    "MONTGOMERY COUNTY",
+    "house_total22",
+    27871,
+    27869
+   ],
+   [
+    "PORTSMOUTH CITY",
+    "house_total22",
+    27301,
+    27298
+   ],
+   [
+    "BEDFORD COUNTY",
+    "house_total22",
+    33689,
+    33688
+   ],
+   [
+    "LYNCHBURG CITY",
+    "house_total22",
+    23420,
+    23419
+   ],
+   [
+    "CULPEPER COUNTY",
+    "house_total22",
+    20217,
+    20216
+   ],
+   [
+    "CAMPBELL COUNTY",
+    "house_total22",
+    20060,
+    20059
+   ],
+   [
+    "FRANKLIN COUNTY",
+    "D22",
+    5131,
+    6861
+   ],
+   [
+    "FRANKLIN COUNTY",
+    "R22",
+    15259,
+    16438
+   ],
+   [
+    "FRANKLIN COUNTY",
+    "house_total22",
+    20412,
+    23325
+   ],
+   [
+    "SHENANDOAH COUNTY",
+    "house_total22",
+    16173,
+    16172
+   ],
+   [
+    "CHARLOTTESVILLE CITY",
+    "house_total22",
+    16727,
+    16724
+   ],
+   [
+    "ACCOMACK COUNTY",
+    "house_total22",
+    13189,
+    13188
+   ],
+   [
+    "FREDERICKSBURG CITY",
+    "house_total22",
+    9169,
+    9168
+   ],
+   [
+    "KING GEORGE COUNTY",
+    "house_total22",
+    10530,
+    10529
+   ],
+   [
+    "GOOCHLAND COUNTY",
+    "house_total22",
+    13758,
+    13756
+   ],
+   [
+    "MANASSAS PARK CITY",
+    "house_total22",
+    3353,
+    3352
+   ],
+   [
+    "WILLIAMSBURG CITY",
+    "house_total22",
+    5098,
+    5095
+   ],
+   [
+    "CHARLOTTE COUNTY",
+    "house_total22",
+    4257,
+    4255
+   ],
+   [
+    "RICHMOND COUNTY",
+    "D22",
+    764,
+    58332
+   ],
+   [
+    "RICHMOND COUNTY",
+    "R22",
+    2005,
+    13630
+   ],
+   [
+    "RICHMOND COUNTY",
+    "house_total22",
+    2788,
+    72131
+   ],
+   [
+    "FRANKLIN CITY",
+    "D22",
+    1730,
+    0
+   ],
+   [
+    "FRANKLIN CITY",
+    "R22",
+    1179,
+    0
+   ],
+   [
+    "FRANKLIN CITY",
+    "house_total22",
+    2913,
+    0
+   ],
+   [
+    "LEXINGTON CITY",
+    "house_total22",
+    2022,
+    2021
+   ],
+   [
+    "GALAX CITY",
+    "house_total22",
+    1606,
+    1605
+   ]
+  ]
+ },
+ "gov2025_enr_vs_historical": {
+  "figures": 266,
+  "differences": 4,
+  "details": [
+   [
+    "WESTMORELAND COUNTY",
+    "govD25",
+    3733,
+    3468
+   ],
+   [
+    "WESTMORELAND COUNTY",
+    "govTot25",
+    8137,
+    7471
+   ],
+   [
+    "NOTTOWAY COUNTY",
+    "govD25",
+    2258,
+    2523
+   ],
+   [
+    "NOTTOWAY COUNTY",
+    "govTot25",
+    5391,
+    6057
+   ]
+  ]
+ },
+ "house2022_locality_sum_vs_district_totals": {
+  "candidate_lines": 35,
+  "differences": 0,
+  "details": []
+ },
+ "gov2021_internal": {
+  "state_row": 3288327,
+  "sum_of_localities": 3288327,
+  "localities": 133,
+  "localities_where_precincts_do_not_sum": 0,
+  "details": []
+ }
+}
