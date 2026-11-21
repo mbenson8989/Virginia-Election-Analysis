@@ -46,5 +46,11 @@ _One constant per region with a common multiplier (0.27), ± 1 standard error. T
 
 _(D + R US House votes) ÷ DOE ballots cast. 2026\*: 0 of 133 above 1.0. 2022: 61 of 133 above 1.0, caused by gaps in the 2022 DOE turnout report (Albemarle and Grayson labeled)._
 
+## 8. Forward surplus fit (share version)
+
+![Surplus G against Democratic baseline share with the fitted share-version lines, 2022 and 2026](https://raw.githubusercontent.com/mbenson8989/Virginia-Election-Analysis/main/graphs/VA_Forward_Surplus_Fit_S_vs_D.png)
+
+_S = surplus G (points) against D = Democratic baseline share (%, PROXY), all 133 localities, dot size = population. 2022: S = 2.58 × (D/100) + 1.00, R² 0.051, mean absolute residual 1.41. 2026\*: S\* = −3.26 × (D/100) + 3.19, R² 0.184, mean absolute residual 0.99. Shaded band: ±1 residual SD._
+
 ---
 **Related:** [Floor and Ceiling Localities](Floor-and-Ceiling) · [Bottom-Up Reverse Math](Reverse-Math) · [Locked Virginia Formula](Locked-Virginia-Formula) · [Home](Home)

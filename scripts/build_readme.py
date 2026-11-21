@@ -58,6 +58,7 @@ Run everything: `scripts/run_all.sh` (prints ALL CLEAN only if both passes match
 - `data/regions.csv` – region assignment used for regional constants
 - `out/analysis.json` – fits, regional constants, narrowed-out localities, floor/ceiling, over-ballot flags
 - `graphs/*.png` – charts used on the wiki
+- `scripts/verify_forward.py` – second pass (standard library) for every fitted line, including the share-version surplus equations S = m × (D/100) + b (result in `out/verify_forward.json`)
 - `pdf/Virginia_133_Locality_Democratic_Baseline_and_Vote_Change.pdf` – 133-locality PDF table (substitute Democratic baseline, Democratic US House votes and total ballots, 2022 vs 2026, 2026 unofficial); built by `scripts/build_pdf.py`, every cell re-checked from the raw DOE files by `scripts/verify_pdf.py` (result in `out/verify_pdf.json`)
 - `wiki/*.md` – wiki page sources
 

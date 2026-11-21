@@ -17,6 +17,10 @@ def n0(x): return m(f'{int(round(x)):,}')
 def sn0(x): return m(f'{int(round(x)):+,}')
 def L(name): return d[d.locality == name].iloc[0]
 S = A['statewide']; F = A['fit_all']; FN = A['fit_narrowed']; FW = A['fit_weighted']; FB = A['fit_ballots_all']; FBN = A['fit_ballots_no_over']
+Q = A['forward']; VF = json.load(open('out/verify_forward.json'))
+M26 = m(f"{Q['26']['m']:.2f}")
+def pm(x, k=2): return ('+ ' if x >= 0 else '− ') + f'{abs(x):.{k}f}'
+def pf(p, lt=False): return '< 0.001' if p < 0.001 else (('= ' if lt else '') + f'{p:.3f}')
 DS = A['dG_summary']; RS = A['residual_summary']; BD = A['B_drop_summary']
 ceil = A['ceiling']; floor = A['floor']; low = A['lowest_dG']; hb = A['highest_baseline']
 names = lambda rs: ', '.join(r['locality'] for r in rs)
@@ -53,7 +57,7 @@ Start with the Cedar County audit in Nebraska. That is where the method began. T
 
 1. [Cedar County Audit]({CEDAR}) (Nebraska wiki): where the method started
 2. [Bottom-Up Reverse Math](Reverse-Math): Chesterfield → the six largest localities → all 133, then solved backward for implied extra votes; full 133-locality table
-3. [Locked Virginia Formula](Locked-Virginia-Formula): the **statewide fitted equation** (constant, multiplier, R², standard errors), regional constants, and the blank fill-in template
+3. [Locked Virginia Formula](Locked-Virginia-Formula): the **statewide fitted equation** (constant, multiplier, R², standard errors), the share-version surplus equations S = m × (D/100) + b, regional constants, and the blank fill-in template
 4. [Floor and Ceiling Localities](Floor-and-Ceiling): the localities at the top and bottom, localities narrowed out of the fit, and the Texas-style over-ballot check
 5. [Graphs](Graphs): slope chart, ΔG by population, fitted-equation scatter, paired bars, residual bars, regional constants, over-ballot check
 6. [Virginia County PDF Information](Virginia-County-PDF-Information): downloadable 133-locality PDF table (baseline, Democratic votes and ballots, 2022 vs 2026\\*), every cell checked against the raw DOE files
@@ -223,7 +227,28 @@ _2022 vs 2026\\* US House, all districts summed per locality; denominator = tota
 
 **What it means:** across Virginia's localities, each 1-point *rise* in the governor-vote baseline (a drop of −1) goes with about {p2(F['multiplier'])} points *lower* ΔG, starting from about {s2(F['constant'])} where the baseline does not move. Because every Virginia locality's baseline rose (drop from {s2(BD['min'])} to {s2(BD['max'])}), the constant is an extrapolation outside the data. Put the other way (1 − {p2(F['multiplier'])} = {p2(1-F['multiplier'])}): each extra point of 2021→2025 baseline rise goes with about {p2(1-F['multiplier'])} points more 2022→2026 House vote-share gain, so the House vote picked up about half of each locality's extra governor swing. The fit explains about {F['r2']*100:.0f}% of the locality-to-locality differences in ΔG. This line describes the pattern; it does not prove anything.
 
-**Worked example: Fairfax County.** B fell from {p2(fx.B22)} (2021) to... no: B *rose* from {p2(fx.B22)} to {p2(fx.B26)}, a baseline-share drop of {m(f'{fx.B_drop:.4f}')} points. Predicted ΔG = {s4(F['constant'])} + {F['multiplier']:.4f} × ({m(f'{fx.B_drop:.4f}')}) = {s2(pred)}. Actual ΔG = {s2(fx.dG)}\\*. Difference from the fitted line (actual − predicted) = {s2(fx.dG-pred)}\\*. This difference is not the line-11 residual in the template below, which is ΔG minus the baseline-share drop.
+**Worked example: Fairfax County.** B *rose* from {p2(fx.B22)} to {p2(fx.B26)}, a baseline-share drop of {m(f'{fx.B_drop:.4f}')} points. Predicted ΔG = {s4(F['constant'])} + {F['multiplier']:.4f} × ({m(f'{fx.B_drop:.4f}')}) = {s2(pred)}. Actual ΔG = {s2(fx.dG)}\\*. Difference from the fitted line (actual − predicted) = {s2(fx.dG-pred)}\\*. This difference is not the line-11 residual in the template below, which is ΔG minus the baseline-share drop.
+
+### Forward surplus equations (share version): S = m × (D/100) + b
+
+Here **S** is the surplus G (Democratic share of US House votes − baseline share, in points) and **D** is the Democratic baseline share **[PROXY]** in percent (0–100 scale): the Democratic share of the prior odd-year governor vote, used because Virginia has no Democratic registration share. Ordinary least squares across all 133 localities, each weighted equally, Virginia data only. This is the same form as the Nebraska, Kansas and South Dakota surplus equations.
+
+| Fit | n | Virginia equation | m (SE) | b (SE) | R² | Residual SD (pts) | Mean absolute residual (pts) |
+|---|---|---|---|---|---|---|---|
+| 2022 (certified) | {Q['22']['n']} | S = {p2(Q['22']['m'])} × (D/100) {pm(Q['22']['b'])} | {s2(Q['22']['m'])} ({p2(Q['22']['m_se'])}) | {s2(Q['22']['b'])} ({p2(Q['22']['b_se'])}) | {Q['22']['r2']:.3f} | {p2(Q['22']['resid_sd'])} | {p2(Q['22']['mean_abs_resid'])} |
+| 2026\\* (unofficial) | {Q['26']['n']} | S\\* = {m(f"{Q['26']['m']:.2f}")} × (D/100) {pm(Q['26']['b'])} | {s2(Q['26']['m'])} ({p2(Q['26']['m_se'])}) | {s2(Q['26']['b'])} ({p2(Q['26']['b_se'])}) | {Q['26']['r2']:.3f} | {p2(Q['26']['resid_sd'])} | {p2(Q['26']['mean_abs_resid'])} |
+| Pooled, both years | {Q['pooled']['n']} | S = {m(f"{Q['pooled']['m']:.2f}")} × (D/100) {pm(Q['pooled']['b'])} | {s2(Q['pooled']['m'])} ({p2(Q['pooled']['m_se'])}) | {s2(Q['pooled']['b'])} ({p2(Q['pooled']['b_se'])}) | {Q['pooled']['r2']:.3f} | {p2(Q['pooled']['resid_sd'])} | {p2(Q['pooled']['mean_abs_resid'])} |
+
+```
+Four decimals, 2022:   S  = {m(f"{Q['22']['m']:.4f}")} × (D/100) {pm(Q['22']['b'], 4)}
+Four decimals, 2026*:  S* = {m(f"{Q['26']['m']:.4f}")} × (D/100) {pm(Q['26']['b'], 4)}
+```
+
+**What it means:** the baseline share explains little of the surplus: about {Q['22']['r2']*100:.0f}% of the locality-to-locality spread in 2022 and {Q['26']['r2']*100:.0f}% in 2026\\*. In 2022 the line tilts up (m {s2(Q['22']['m'])}, p = {pf(Q['22']['p_m'])}): moving from a 20% to an 80% baseline adds about {p2(Q['22']['m']*0.6)} points of surplus. In 2026\\* it tilts down (m {s2(Q['26']['m'])}, p {pf(Q['26']['p_m'], True)}): the same move takes away about {p2(-Q['26']['m']*0.6)} points. Testing both years in one model, the 2026\\* multiplier is {p2(-Q['year_test']['dm'])} lower (p {pf(Q['year_test']['p_dm'], True)}) and the offset {p2(Q['year_test']['db'])} higher (p {pf(Q['year_test']['p_db'], True)}). D ranges from {p2(Q['22']['D_min'])} to {p2(Q['22']['D_max'])} in 2022 and from {p2(Q['26']['D_min'])} to {p2(Q['26']['D_max'])} in 2026, so b (the value at D = 0) lies outside the data.
+
+**Forward check: Fairfax County, 2026\\*.** S\\* = {m(f"{Q['26']['m']:.4f}")} × ({fx.B26:.4f} ÷ 100) {pm(Q['26']['b'], 4)} = {s2(fx.fS26)}\\*. Actual surplus G 2026 = {s2(fx.G26)}\\*. Residual (actual − fitted) = {s2(fx.fres26)}\\*. For 2022: S = {Q['22']['m']:.4f} × ({fx.B22:.4f} ÷ 100) {pm(Q['22']['b'], 4)} = {s2(fx.fS22)} fitted, against an actual {s2(fx.G22)} (residual {s2(fx.fres22)}).
+
+**Check of the locked equation against the data and graphs.** Plugging all 133 localities into ΔG = {s4(F['constant'])} + {F['multiplier']:.4f} × drop reproduces the fitted line in [graph 3](Graphs#3-statewide-fitted-equation): mean absolute residual {p2(F['mean_abs_resid'])} points, and the residuals sum to zero. The share-version lines are drawn in [graph 8](Graphs#8-forward-surplus-fit-share-version). A second pass ([`scripts/verify_forward.py`]({REPO}/blob/main/scripts/verify_forward.py), standard library only, on the pass B table rebuilt from the raw DOE files) refits every line and recomputes every locality's fitted value and residual: {VF['checks']} checks, {VF['mismatches']} mismatches.
 
 ### Sensitivity checks
 
@@ -318,7 +343,6 @@ The baseline needs to measure each locality's partisan lean independently of the
 
 {REL(P['rev'], P['fc'], P['gr'], P['cedar'], P['home'])}
 """
-lock = lock.replace(f"B fell from {p2(fx.B22)} (2021) to... no: B *rose*", "B *rose*")
 
 # ---------------- FLOOR AND CEILING ----------------
 def fcrow(r, grp):
@@ -436,6 +460,9 @@ All charts use the US House race, the total-US-House-votes denominator and the g
 ## 7. Texas-style over-ballot check
 
 {img('VA_Over_Ballot_Check.png', 'Democratic plus Republican votes divided by DOE ballots cast, 2022 and 2026', f'(D + R US House votes) ÷ DOE ballots cast. 2026\\*: 0 of 133 above 1.0. 2022: {len(over)} of 133 above 1.0, caused by gaps in the 2022 DOE turnout report (Albemarle and Grayson labeled).')}
+## 8. Forward surplus fit (share version)
+
+{img('VA_Forward_Surplus_Fit_S_vs_D.png', 'Surplus G against Democratic baseline share with the fitted share-version lines, 2022 and 2026', f"S = surplus G (points) against D = Democratic baseline share (%, PROXY), all 133 localities, dot size = population. 2022: S = {p2(Q['22']['m'])} × (D/100) {pm(Q['22']['b'])}, R² {Q['22']['r2']:.3f}, mean absolute residual {p2(Q['22']['mean_abs_resid'])}. 2026\\*: S\\* = {M26} × (D/100) {pm(Q['26']['b'])}, R² {Q['26']['r2']:.3f}, mean absolute residual {p2(Q['26']['mean_abs_resid'])}. Shaded band: ±1 residual SD.")}
 {REL(P['fc'], P['rev'], P['lock'], P['home'])}
 """
 

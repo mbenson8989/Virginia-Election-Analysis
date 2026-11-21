@@ -27,6 +27,27 @@ _2022 vs 2026\* US House, all districts summed per locality; denominator = total
 
 **Worked example: Fairfax County.** B *rose* from 64.89 to 73.78, a baseline-share drop of −8.8936 points. Predicted ΔG = +3.0917 + 0.4827 × (−8.8936) = −1.20. Actual ΔG = −1.26\*. Difference from the fitted line (actual − predicted) = −0.06\*. This difference is not the line-11 residual in the template below, which is ΔG minus the baseline-share drop.
 
+### Forward surplus equations (share version): S = m × (D/100) + b
+
+Here **S** is the surplus G (Democratic share of US House votes − baseline share, in points) and **D** is the Democratic baseline share **[PROXY]** in percent (0–100 scale): the Democratic share of the prior odd-year governor vote, used because Virginia has no Democratic registration share. Ordinary least squares across all 133 localities, each weighted equally, Virginia data only. This is the same form as the Nebraska, Kansas and South Dakota surplus equations.
+
+| Fit | n | Virginia equation | m (SE) | b (SE) | R² | Residual SD (pts) | Mean absolute residual (pts) |
+|---|---|---|---|---|---|---|---|
+| 2022 (certified) | 133 | S = 2.58 × (D/100) + 1.00 | +2.58 (0.97) | +1.00 (0.41) | 0.051 | 1.87 | 1.41 |
+| 2026\* (unofficial) | 133 | S\* = −3.26 × (D/100) + 3.19 | −3.26 (0.60) | +3.19 (0.29) | 0.184 | 1.23 | 0.99 |
+| Pooled, both years | 266 | S = −0.67 × (D/100) + 2.13 | −0.67 (0.58) | +2.13 (0.26) | 0.005 | 1.66 | 1.29 |
+
+```
+Four decimals, 2022:   S  = 2.5840 × (D/100) + 1.0017
+Four decimals, 2026*:  S* = −3.2617 × (D/100) + 3.1859
+```
+
+**What it means:** the baseline share explains little of the surplus: about 5% of the locality-to-locality spread in 2022 and 18% in 2026\*. In 2022 the line tilts up (m +2.58, p = 0.009): moving from a 20% to an 80% baseline adds about 1.55 points of surplus. In 2026\* it tilts down (m −3.26, p < 0.001): the same move takes away about 1.96 points. Testing both years in one model, the 2026\* multiplier is 5.85 lower (p < 0.001) and the offset 2.18 higher (p < 0.001). D ranges from 12.13 to 84.87 in 2022 and from 15.76 to 88.93 in 2026, so b (the value at D = 0) lies outside the data.
+
+**Forward check: Fairfax County, 2026\*.** S\* = −3.2617 × (73.7788 ÷ 100) + 3.1859 = +0.78\*. Actual surplus G 2026 = +0.62\*. Residual (actual − fitted) = −0.16\*. For 2022: S = 2.5840 × (64.8851 ÷ 100) + 1.0017 = +2.68 fitted, against an actual +1.88 (residual −0.80).
+
+**Check of the locked equation against the data and graphs.** Plugging all 133 localities into ΔG = +3.0917 + 0.4827 × drop reproduces the fitted line in [graph 3](Graphs#3-statewide-fitted-equation): mean absolute residual 1.51 points, and the residuals sum to zero. The share-version lines are drawn in [graph 8](Graphs#8-forward-surplus-fit-share-version). A second pass ([`scripts/verify_forward.py`](https://github.com/mbenson8989/Virginia-Election-Analysis/blob/main/scripts/verify_forward.py), standard library only, on the pass B table rebuilt from the raw DOE files) refits every line and recomputes every locality's fitted value and residual: 696 checks, 0 mismatches.
+
 ### Sensitivity checks
 
 | Fit | n | Constant (SE) | Multiplier (SE) | R² |

@@ -50,6 +50,23 @@ out['residual_summary'] = {'median': d.residual.median(), 'min': d.residual.min(
 out['B_drop_summary'] = {'median': d.B_drop.median(), 'min': d.B_drop.min(), 'max': d.B_drop.max(), 'n_positive': int((d.B_drop > 0).sum())}
 out['implied_sum'] = d.implied_extra.sum(); out['baseline_scaled_sum'] = d.baseline_scaled_gap.sum()
 out['n_implied_negative'] = int((d.implied_extra < 0).sum())
+# ---- forward surplus (share version): S = m * (D/100) + b, S = G (points), D = B baseline share [PROXY] ----
+out['fit_all']['mean_abs_resid'] = float(m_all.resid.abs().mean())
+fw = {}
+for yr in ('22', '26'):
+    dd = pd.DataFrame({'S': d['G' + yr], 'Dfrac': d['B' + yr] / 100})
+    mf = smf.ols('S ~ Dfrac', data=dd).fit()
+    d['fS' + yr] = mf.fittedvalues; d['fres' + yr] = mf.resid
+    fw[yr] = {'n': int(mf.nobs), 'm': mf.params['Dfrac'], 'm_se': mf.bse['Dfrac'], 'b': mf.params['Intercept'], 'b_se': mf.bse['Intercept'],
+              'r2': mf.rsquared, 'resid_sd': float(np.sqrt(mf.scale)), 'mean_abs_resid': float(mf.resid.abs().mean()),
+              'p_m': mf.pvalues['Dfrac'], 'p_b': mf.pvalues['Intercept'], 'D_min': d['B' + yr].min(), 'D_max': d['B' + yr].max()}
+pool = pd.concat([pd.DataFrame({'S': d.G22, 'Dfrac': d.B22 / 100, 'y26': 0}), pd.DataFrame({'S': d.G26, 'Dfrac': d.B26 / 100, 'y26': 1})], ignore_index=True)
+mp = smf.ols('S ~ Dfrac', data=pool).fit()
+fw['pooled'] = {'n': int(mp.nobs), 'm': mp.params['Dfrac'], 'm_se': mp.bse['Dfrac'], 'b': mp.params['Intercept'], 'b_se': mp.bse['Intercept'],
+                'r2': mp.rsquared, 'resid_sd': float(np.sqrt(mp.scale)), 'mean_abs_resid': float(mp.resid.abs().mean())}
+mi = smf.ols('S ~ Dfrac * y26', data=pool).fit()
+fw['year_test'] = {'dm': mi.params['Dfrac:y26'], 'p_dm': mi.pvalues['Dfrac:y26'], 'db': mi.params['y26'], 'p_db': mi.pvalues['y26']}
+out['forward'] = fw
 cols = ['locality', 'region', 'pop2025', 'B22', 'B26', 'S22', 'S26', 'G22', 'G26', 'dG', 'B_drop', 'residual', 'implied_extra', 'D22', 'D26', 'govD21', 'govD25', 'house_total22', 'house_total26']
 out['ceiling'] = d.nlargest(5, 'dG')[cols].to_dict('records')
 out['lowest_dG'] = d.nsmallest(5, 'dG')[cols].to_dict('records')
@@ -66,6 +83,7 @@ d.to_csv('data/virginia_localities_final.csv', index=False)
 json.dump(out, open('out/analysis.json', 'w'), indent=1, default=float)
 for k in ['fit_all', 'fit_narrowed', 'fit_weighted', 'fit_ballots_all', 'fit_ballots_no_over', 'regional_F_test', 'statewide', 'dG_summary', 'residual_summary', 'B_drop_summary']:
     print(k, {a: (round(b, 4) if isinstance(b, float) else b) for a, b in out[k].items()})
+print('forward', {k: {a: (round(b, 4) if isinstance(b, float) else b) for a, b in v.items()} for k, v in out['forward'].items()})
 print('narrowed', [(r['locality'], round(r['cooks'], 3), round(r['stud'], 2)) for r in out['narrowed_out']])
 print('regional', {k: (round(v['constant'], 2), round(v['se'], 2), v['n']) for k, v in out['regional_common_slope']['constants'].items()}, round(out['regional_common_slope']['multiplier'], 3))
 for k in ['ceiling', 'lowest_dG', 'floor', 'highest_baseline', 'baseline_loss']:

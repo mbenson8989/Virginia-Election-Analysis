@@ -65,4 +65,18 @@ for ax, yr, dr, bal in ((axs[0], '2022', 'D22', 'ballots22'), (axs[1], '2026*', 
 for _, r in d[(d.D22 + d.R22) / d.ballots22 > 1.1].iterrows(): axs[0].annotate(r.locality, (r.pop2025, (r.D22 + r.R22) / r.ballots22), fontsize=7)
 fig.suptitle('Texas-style check: Democratic + Republican votes vs DOE ballots cast'); foot(fig)
 fig.tight_layout(rect=(0, .03, 1, .95)); fig.savefig(P + 'VA_Over_Ballot_Check.png', dpi=130); plt.close()
+# 8 forward surplus (share version) S = m*(D/100) + b
+FW = A['forward']
+fig, axs = plt.subplots(1, 2, figsize=(14, 7), sharey=True)
+for ax, yr, lab in ((axs[0], '22', '2022'), (axs[1], '26', '2026*')):
+    q = FW[yr]; X = d['B' + yr]; Y = d['G' + yr]
+    ax.scatter(X, Y, s=np.sqrt(d.pop2025) / 8, color=BL if yr == '22' else OR, alpha=.75, zorder=3, label='locality (size = population)')
+    xs = np.linspace(X.min() - 2, X.max() + 2, 50); ys = q['m'] * xs / 100 + q['b']
+    ax.fill_between(xs, ys - q['resid_sd'], ys + q['resid_sd'], color='#e6e6e6', zorder=0, label=f"±1 residual SD ({q['resid_sd']:.2f})")
+    ax.plot(xs, ys, color='k', zorder=2, label=f"S = {q['m']:.2f} × (D/100) {'+' if q['b'] >= 0 else '−'} {abs(q['b']):.2f}\nR² {q['r2']:.3f}, mean |residual| {q['mean_abs_resid']:.2f}")
+    ax.axhline(0, color='k', lw=.4); ax.set_xlabel(f"D = Democratic baseline share for 20{yr} (%) [PROXY: {'2021' if yr == '22' else '2025'} governor vote]")
+    ax.set_title(f'{lab}: n = {q["n"]}'); ax.legend(fontsize=8, loc='upper center', bbox_to_anchor=(.5, -.13), ncol=1, frameon=False)
+axs[0].set_ylabel('S = surplus G = House share − baseline share (points)')
+fig.suptitle('Virginia forward surplus fit, share version S = m × (D/100) + b (OLS, VA data only)'); foot(fig)
+fig.tight_layout(rect=(0, .03, 1, .95)); fig.savefig(P + 'VA_Forward_Surplus_Fit_S_vs_D.png', dpi=130); plt.close()
 print('ok')

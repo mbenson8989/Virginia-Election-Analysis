@@ -12,7 +12,7 @@ Start with the Cedar County audit in Nebraska. That is where the method began. T
 
 1. [Cedar County Audit](https://github.com/mbenson8989/Nebraska-Election-Analysis-/wiki/Cedar-Audit) (Nebraska wiki): where the method started
 2. [Bottom-Up Reverse Math](Reverse-Math): Chesterfield → the six largest localities → all 133, then solved backward for implied extra votes; full 133-locality table
-3. [Locked Virginia Formula](Locked-Virginia-Formula): the **statewide fitted equation** (constant, multiplier, R², standard errors), regional constants, and the blank fill-in template
+3. [Locked Virginia Formula](Locked-Virginia-Formula): the **statewide fitted equation** (constant, multiplier, R², standard errors), the share-version surplus equations S = m × (D/100) + b, regional constants, and the blank fill-in template
 4. [Floor and Ceiling Localities](Floor-and-Ceiling): the localities at the top and bottom, localities narrowed out of the fit, and the Texas-style over-ballot check
 5. [Graphs](Graphs): slope chart, ΔG by population, fitted-equation scatter, paired bars, residual bars, regional constants, over-ballot check
 6. [Virginia County PDF Information](Virginia-County-PDF-Information): downloadable 133-locality PDF table (baseline, Democratic votes and ballots, 2022 vs 2026\*), every cell checked against the raw DOE files
